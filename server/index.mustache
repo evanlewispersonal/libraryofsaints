@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="application-name" content="library-of-short-stories">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="web_author" content="Evan Lewis">
+    <meta name="keywords" content="{{keywords}}">
+
+    {{! <link rel="apple-touch-icon" sizes="180x180" href="https://libraryofshortstories.s3.ap-southeast-2.amazonaws.com/small/-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://libraryofshortstories.s3.ap-southeast-2.amazonaws.com/small/-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://libraryofshortstories.s3.ap-southeast-2.amazonaws.com/small/-16x16.png"> }}
+    <link rel="shortcut icon" href="/favicon.ico">
+    {{! <link rel="shortcut icon" sizes="16x16" href="/favicon.ico-16x16"> }}
+    {{! <meta name="msapplication-TileImage" content="https://libraryofshortstories.s3.ap-southeast-2.amazonaws.com/small/-144x144.png"> }}
+
+    <link rel="canonical" href={{canonical}} />
+
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:image" content="{{image}}" />
+    <meta property="og:image:alt" content="{{image_alt}}" />
+
+
+    <meta property="og:url" content={{canonical}} />
+    <meta property="og:locale" content=en_AU />
+    <meta property="og:type" content={{og_type}} />
+
+
+    <link rel="preconnect" href="https://libraryofshortstories.s3.ap-southeast-2.amazonaws.com">
+    <link rel="preload" href="/dist/{{bundle}}.js" as='script'>
+    <link rel="preload" href="/fonts/garamond/EBGaramond-Regular.ttf" as='font' crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/pages/{{styling}}.css">
+
+    {{{preloads}}}
+
+
+</head>
+
+<body>
+    <script src="/dist/{{bundle}}.js" defer></script>
+</body>
+
+</html>

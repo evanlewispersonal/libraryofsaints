@@ -1,0 +1,107 @@
+.page {
+    background-color: #C3D7DF;
+
+}
+
+.saint_tiles {
+    display: flex;
+    gap: 20px;
+    /* padding: 20px; */
+    flex-wrap: wrap;
+}
+
+.saint_tile {
+    /* height: 280px;
+    display: flex;
+    flex-direction: column;
+    width: 186px;
+    transition: 0.2s;
+    border-radius: 10px 10px 0px 0px; */
+
+
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    width: 186px;
+    transition: 0.3s;
+    border-radius: 10px 10px 0px 0px;
+    text-decoration: none;
+    color: var(--primary_text);
+}
+
+@media only screen and (max-width: 600px) {
+
+    .saint_tile {
+        width: calc(50% - 10px);
+    }
+}
+
+.saint_tile:is(:hover, :focus-visible) {
+    box-shadow: none;
+    z-index: 2;
+}
+
+.saint_tile:is(:hover, :focus-visible) .saint_tile_image {
+    /* overflow: initial;
+    flex: 0 1 auto */
+}
+
+.saint_tile:is(:hover, :focus-visible) img {
+    /* height: initial; */
+
+    max-height: 200%;
+
+    box-shadow: 0px 0px 20px 18px #faed8f;
+
+}
+
+
+
+.saint_tile_title {
+    border: solid 3px var(--primary);
+    border-style: solid solid none solid;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 2px;
+    background-color: white;
+
+}
+
+.saint_tile_name {
+    font-size: 20px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.saint_tile_moniker {
+    color: var(--light_text);
+}
+
+.saint_tile_image {
+    flex: 1 1 auto;
+    /* border: solid 3px var(--primary); */
+    background-color: white;
+    min-height: 0px;
+
+}
+
+.saint_tile img {
+    /* object-fit: cover;
+    flex: 1 1 auto;
+    width: 100%;
+    height:  100%;
+    display: block; */
+
+    object-fit: cover;
+    width: 100%;
+    box-sizing: border-box;
+    height: initial;
+    display: block;
+    transition: 0.3s;
+    /* transition: 0.2s; */
+    min-height: 100%;
+    max-height: 100%;
+    border: solid 3px var(--primary);
+
+}

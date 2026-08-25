@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+    font-weight: initial;
+    font-family: garamond;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+h1 a {
+    color: var(--link_text)
+}
+
+
+.icon_gallery{
+    padding: 20px;
+    background: white;
+    border: solid 3px var(--primary);
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.icon{
+    width: 180px
+}
+
+@media only screen and (max-width: 600px) {
+
+    .icon {
+        width: calc(50% - 10px);
+    }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "Saints",
+  "sideEffects": false,
+  "version": "1.0.0",
+  "description": "Library of lives of saints",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "debug": "",
+    "build": "webpack --mode=production",
+    "dev": "webpack --mode=development",
+    "watch": "npm-watch",
+    "style": "tar -cvzf server/public/styles/styles.css server/public/styles/style.css.gz",
+    "stats": "webpack --json > stats.json --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://username@github.com/evanlewispersonal/saints.git"
+  },
+  "keywords": [
+    "saints"
+  ],
+  "author": "Evan C Lewis",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "fs": "0.0.1-security",
+    "helmet": "^6.0.1",
+    "https": "^1.0.0",
+    "mithril": "^2.0.4",
+    "mustache-express": "^1.3.2",
+    "node-fetch": "^3.3.1",
+    "node-gzip": "^1.1.2",
+    "sitemap": "^7.1.1"
+  },
+  "devDependencies": {
+    "compression-webpack-plugin": "^10.0.0",
+    "eslint": "^8.15.0",
+    "npm-watch": "^0.11.0",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,jsx"
+    },
+    "dev": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,jsx"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/evanlewispersonal/saints/issues"
+  },
+  "homepage": "https://github.com/evanlewispersonal/saints#readme"
+}
