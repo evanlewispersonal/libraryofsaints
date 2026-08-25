@@ -1,5 +1,6 @@
 import m, { route, redraw } from 'mithril'
 import Saints from '../../models/Saints'
+import { download } from '../components/icons'
 
 
 const image_base = 'https://libraryofsaints.s3.ap-southeast-2.amazonaws.com/'
@@ -25,15 +26,26 @@ const Page = {
 
                 m('.icon_gallery',
                     m('.icons',
-                        vnode.state.saint?.icons.concat
-                            (vnode.state.saint?.icons).concat
-                            (vnode.state.saint?.icons).concat
-                            (vnode.state.saint?.icons).concat
-                            (vnode.state.saint?.icons).concat
-                            (vnode.state.saint?.icons)
+                        vnode.state.saint?.icons
+                            // .concat
+                            // (vnode.state.saint?.icons).concat
+                            // (vnode.state.saint?.icons).concat
+                            // (vnode.state.saint?.icons).concat
+                            // (vnode.state.saint?.icons).concat
+                            // (vnode.state.saint?.icons)
 
                             .map(icon => [
-                                m('img.icon', { src: image_base + icon + '.jpg' })
+                                m('.icon_tile',
+                                    m('img.icon', { src: image_base + icon + '.jpg' }),
+
+                                    m('i.icon_title', 'Jonah survives'),
+                                    m('.icon_source', 'St. Mary Monastery'),
+                                    m('a.icon_download', {
+                                        href: image_base + icon + '_800.jpg'
+                                    },
+                                        'Full Size',
+                                        m(download))
+                                )
                             ])),
 
 

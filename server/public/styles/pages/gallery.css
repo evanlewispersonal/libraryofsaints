@@ -28,13 +28,59 @@ h1 a {
     flex-wrap: wrap;
 }
 
-.icon{
+
+.icon_tile{
     width: 180px
+
+}
+
+.icon{
+    width: 100%;
+    display: block;
+    border: solid 3px var(--primary);
+    box-sizing: border-box;
+}
+
+.icon_title{
+    border: solid 3px var(--primary);
+    border-top: none;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+}
+
+.icon_source{
+    border: solid 3px var(--primary);
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    border-top: none;
+}
+
+.icon_download{
+    display: block;
+    border: solid 3px var(--primary);
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    border-top: none;
+    border-radius: 0px 0px 10px 10px;
+    background: var(--link_text);
+    color: white;
+    position: relative;
+}
+
+.icon_download svg{
+    position: absolute;
+    right: 0px;
+    top: 1px;
+
 }
 
 @media only screen and (max-width: 600px) {
 
-    .icon {
+    .icon_tile {
         width: calc(50% - 10px);
     }
 }
