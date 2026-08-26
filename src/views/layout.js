@@ -1,5 +1,6 @@
 import m, { route, redraw } from 'mithril'
 import Menu from '../models/Menu'
+import { noai_icon } from './components/icons'
 
 const Page = {
     oninit: vnode => {
@@ -13,7 +14,9 @@ const Page = {
             m('.website',
                 m(top_section),
 
-                vnode.children
+                vnode.children,
+
+                m(noai_icon)
             )
         ]
 

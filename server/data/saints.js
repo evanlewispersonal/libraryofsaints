@@ -11,10 +11,19 @@ const Saints =
                 'saintmary',
                 'saintmary_2',
                 'saintmary_3'
+            ],
+            tags: [
+                'Ascete',
+                'Desert Mother'
             ]
         },
 
-        { patron_name: 'St. Moses', monikers: ['the Black', 'the Ethiopian', 'the Strong'], icons: ['saintmoses'] },
+        {
+            patron_name: 'St. Moses',
+            monikers: ['the Black', 'the Ethiopian', 'the Strong', 'the Robber'],
+            icons: ['saintmoses'],
+            tags: ['Monk', 'Abbot', 'Priest', 'Desert Father']
+        },
         { patron_name: 'St. Paisios', monikers: ['the Athonite'], icons: ['saintpaisiosofmountathos', 'saintpaisiosofmountathos', 'saintpaisiosofmountathos'] },
         { patron_name: 'Prophet Jonah', icons: ['jonah'] },
         { patron_name: 'Prophet Noah', icons: ['noah'] },

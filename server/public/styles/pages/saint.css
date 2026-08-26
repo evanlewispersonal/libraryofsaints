@@ -1,3 +1,18 @@
+.page {
+    background-color: #f5f5f5;
+    padding: 0px;
+}
+
+.inner_page {
+    background-color: #C3D7DF;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: solid 3px var(--primary);
+
+    border-style: none solid none solid;
+}
+
 h1 {
     text-align: center;
     font-weight: initial;
@@ -33,11 +48,11 @@ h1 {
 }
 
 .icon_window {
-    padding: 20px;
+    max-width: 600px;
+    padding: 10px;
     background: white;
     border: solid 3px var(--primary);
     border-radius: 10px;
-    width: fit-content;
     margin: auto;
     margin-top: 20px;
     position: relative;
@@ -45,13 +60,16 @@ h1 {
 
 .icons {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
 }
 
 .icon {
-    width: 180px;
     border: solid 3px var(--primary);
     object-fit: cover;
+    flex: 0 1 180px;
+    min-width: 0px;
 }
 
 .icon_gallery_link {
@@ -121,8 +139,8 @@ h1 {
 .collapse_line_1 {
     background: var(--link_text);
     height: 3px;
-    width: 50%;
-    left: 25%;
+    width: 40%;
+    left: 30%;
     position: absolute;
     top: 70%;
     border-radius: 10px;
@@ -130,13 +148,13 @@ h1 {
 
 .collapse_line_2 {
     background: var(--link_text);
-    height: 60%;
+    height: 55%;
     width: 3px;
     position: absolute;
     left: calc(50% + 0%);
-    top: calc(50% - 34%);
+    top: calc(50% - 31%);
+    border-radius: 10px;
     transform: translateX(-50%);
-    /* transform: translate(26%, -54%); */
 }
 
 
@@ -145,11 +163,10 @@ h1 {
     height: 40%;
     width: 3px;
     position: absolute;
-    left: calc(50% + 13%);
+    left: calc(50% + 12%);
     top: calc(50% - 40%);
     transform: translateX(-50%) rotate(135deg);
     border-radius: 10px;
-
 }
 
 .collapse_line_4 {
@@ -157,11 +174,9 @@ h1 {
     height: 40%;
     width: 3px;
     position: absolute;
-    left: calc(50% - 13%);
+    left: calc(50% - 12%);
     top: calc(50% - 40%);
-
     transform: translateX(-50%) rotate(225deg);
-
     border-radius: 10px;
 }
 
@@ -203,5 +218,16 @@ h1 {
 }
 
 .external_links li a {
+    color: var(--link_text);
+}
+
+
+svg {
+    width: 180px;
+    border: #8fd5ee;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+    border: none;
     color: var(--link_text);
 }

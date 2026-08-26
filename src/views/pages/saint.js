@@ -1,5 +1,6 @@
 import m, { route, redraw } from 'mithril'
 import Saints from '../../models/Saints'
+import { up_circle } from '../components/icons'
 
 
 const image_base = 'https://libraryofsaints.s3.ap-southeast-2.amazonaws.com/'
@@ -16,77 +17,89 @@ const Page = {
 
     view: function (vnode) {
 
+
+        let secondary_monikers = vnode.state.saint?.monikers ? vnode.state.saint.monikers.slice(1) : []
+            
         return [
 
             m('.page',
-                m('h1', vnode.state.saint?.patron_name),//vnode.attrs.saint),
-                m('.monikers', (vnode.state.saint?.monikers || ['the Strong', 'the Robber', 'the Nubian'])
-                    .map(moniker => m('.moniker', moniker))
-                ),
-                m('.tags', (vnode.state.saint?.tags || ['Monk', 'Abbot', 'Priest']).map(tag => m('.tag', tag))),
+                m('.inner_page',
+                    m('h1',
+                        vnode.state.saint?.patron_name,
+                        vnode.state.saint?.monikers? [' ',
+                        vnode.state.saint?.monikers[0]]:[]
 
-                m('.icon_window',
-                    m('.icons',
-                        vnode.state.saint?.icons.map(icon => [
-                            m('img.icon', { src: image_base + icon + '.jpg' })
-                        ])),
+                    ),//vnode.attrs.saint),
+                    m('.monikers', (secondary_monikers)
+                        .map(moniker => m('.moniker', moniker))
+                    ),
+                    m('.tags', (vnode.state.saint?.tags || ['Monk', 'Abbot', 'Priest']).map(tag => m('.tag', tag))),
 
-                    m('a.icon_gallery_link',
-                        {
-                            href: '/gallery/' + vnode.state.saint?.code
-                        },
-                        'Full Icon Gallery'
-                    )
-                ),
+                    m('.icon_window',
+                        m('.icons',
+                            vnode.state.saint?.icons.map(icon => [
+                                m('img.icon', { src: image_base + icon + '.jpg' })
+                            ])),
 
-                m('.lifeof',
-                    m('.lifeof_reader',
-                        {
-                            class: vnode.state.life_of_expanded ? 'expanded' : '',
+                        m('a.icon_gallery_link',
+                            {
+                                href: '/gallery/' + vnode.state.saint?.code
+                            },
+                            'Full Icon Gallery'
+                        )
+                    ),
 
-                        },
-                        m('h3', 'Life of ', vnode.state.saint?.patron_name),
-                        m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                        m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                        m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                        m('p', m('i', 'Source: Submitted by Joe Bloggs')),
+                    m('.lifeof',
+                        m('.lifeof_reader',
+                            {
+                                class: vnode.state.life_of_expanded ? 'expanded' : '',
+
+                            },
+                            m('h3', 'Life of ', vnode.state.saint?.patron_name),
+                            m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                            m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                            m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                            m('p', m('i', 'Source: Submitted by Joe Bloggs')),
+
+                        ),
+
+                        m('.life_of_expand',
+                            {
+                                onclick: () => {
+                                    vnode.state.life_of_expanded = !vnode.state.life_of_expanded
+                                }
+                            },
+
+                            vnode.state.life_of_expanded ? [
+
+                                m(up_circle),
+
+                                // m('.collapse',
+                                //     m('.collapse_line_1'),
+                                //     m('.collapse_line_2'),
+                                //     m('.collapse_line_3'),
+                                //     m('.collapse_line_4'),
+
+                                // )
+
+                            ] : m('.circles',
+                                m('.circle'),
+                                m('.circle'),
+                                m('.circle')
+                            ),
+
+                        )
+
 
                     ),
 
-                    m('.life_of_expand',
-                        {
-                            onclick: () => {
-                                vnode.state.life_of_expanded = !vnode.state.life_of_expanded
-                            }
-                        },
-
-                        vnode.state.life_of_expanded ? [
-
-                            m('.collapse',
-                                m('.collapse_line_1'),
-                                m('.collapse_line_2'),
-                                m('.collapse_line_3'),
-                                m('.collapse_line_4'),
-
-                            )
-
-                        ] : m('.circles',
-                            m('.circle'),
-                            m('.circle'),
-                            m('.circle')
-                        ),
-
-                    )
-
-
-                ),
-
-                m('.external_links',
-                    m('h3', 'External Links'),
-                    m('ul',
-                        m('li', m('a', { href: '/' }, 'Website 1')),
-                        m('li', m('a', { href: '/' }, 'Website 2')),
-                        m('li', m('a', { href: '/' }, 'Website 3')),
+                    m('.external_links',
+                        m('h3', 'External Links'),
+                        m('ul',
+                            m('li', m('a', { href: '/' }, 'Website 1')),
+                            m('li', m('a', { href: '/' }, 'Website 2')),
+                            m('li', m('a', { href: '/' }, 'Website 3')),
+                        )
                     )
                 )
             )

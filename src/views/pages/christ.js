@@ -27,7 +27,7 @@ const Page = {
                         m('p', 'Matthew 6:33')
                     ),
                     m('.quote',
-                        m('i', 'I did not come to call the righteous, but sinners, to repentance'),
+                        m('i', 'I did not come to call the righteous, but sinners, to repentance.'),
                         m('p', 'Mark 2:17')
                     ),
                     m('.quote',
