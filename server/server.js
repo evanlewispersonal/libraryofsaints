@@ -155,6 +155,38 @@ pages.get().forEach(page => {
     }
 })
 
+app.get('/saintslifegzip/:saint', (req, res) => {
+
+    res.set('Content-Encoding', 'gzip');
+    res.set('Content-Type', 'text/css');
+
+    let author = req.params.author.replace('.txt', '.gz')
+    const filePath = path.join(__dirname, './public/writing-stylesgzip/' + author)
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            if (err.code === 'ENOENT') {
+                res.sendStatus(404);
+            } else {
+                console.error(err);
+                res.sendStatus(500);
+            }
+        }
+    })
+})
+
+app.get('/saintslife/:saint', (req, res) => {
+
+    fs.readFile(path.join(__dirname, '/public/saintstxt/' + req.params.saint), 'utf8', (read_error, data) => {
+        if (read_error) {
+            // console.error(read_error)
+            res.sendStatus(404)
+            return
+        }
+        res.send({ text: data })
+    })
+
+})
+
 
 app.get('/dist/bundle.js', (req, res) => {
 

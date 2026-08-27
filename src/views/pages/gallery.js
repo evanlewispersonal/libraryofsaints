@@ -36,12 +36,12 @@ const Page = {
 
                             .map(icon => [
                                 m('.icon_tile',
-                                    m('img.icon', { src: image_base + icon + '.jpg' }),
+                                    m('img.icon', { src: image_base + icon.code + '.jpg' }),
 
                                     m('i.icon_title', 'Jonah survives'),
-                                    m('.icon_source', 'St. Mary Monastery'),
+                                    m('a.icon_source', {href: icon.sourcelink}, icon.source),
                                     m('a.icon_download', {
-                                        href: image_base + icon + '_800.jpg'
+                                        href: image_base + icon.code + '_800.jpg'
                                     },
                                         'Full Size',
                                         m(download))

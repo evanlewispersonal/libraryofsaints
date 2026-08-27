@@ -13,21 +13,26 @@ const Page = {
             if (vnode.state.saint) console.log(vnode.state.saint)
             m.redraw()
         })
+
+        Saints.load_saints_life(vnode.attrs.saint, (life) => {
+            vnode.attrs.life = life
+            m.redraw()
+        })
     },
 
     view: function (vnode) {
 
 
         let secondary_monikers = vnode.state.saint?.monikers ? vnode.state.saint.monikers.slice(1) : []
-            
+
         return [
 
             m('.page',
                 m('.inner_page',
                     m('h1',
                         vnode.state.saint?.patron_name,
-                        vnode.state.saint?.monikers? [' ',
-                        vnode.state.saint?.monikers[0]]:[]
+                        vnode.state.saint?.monikers ? [' ',
+                            vnode.state.saint?.monikers[0]] : []
 
                     ),//vnode.attrs.saint),
                     m('.monikers', (secondary_monikers)
@@ -38,7 +43,7 @@ const Page = {
                     m('.icon_window',
                         m('.icons',
                             vnode.state.saint?.icons.map(icon => [
-                                m('img.icon', { src: image_base + icon + '.jpg' })
+                                m('img.icon', { src: image_base + icon.code + '.jpg' })
                             ])),
 
                         m('a.icon_gallery_link',
@@ -56,11 +61,12 @@ const Page = {
 
                             },
                             m('h3', 'Life of ', vnode.state.saint?.patron_name),
-                            m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                            m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                            m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                            m('p', m('i', 'Source: Submitted by Joe Bloggs')),
-
+                            vnode.attrs.life? m.trust(vnode.attrs.life) : [
+                                m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                                m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                                m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+                                m('p', m('i', 'Source: Submitted by Joe Bloggs of St. Mary, Sydney Australia')),
+                            ]
                         ),
 
                         m('.life_of_expand',
@@ -93,14 +99,17 @@ const Page = {
 
                     ),
 
-                    m('.external_links',
+                    vnode.state.saint?.websites ? m('.external_links',
                         m('h3', 'External Links'),
                         m('ul',
-                            m('li', m('a', { href: '/' }, 'Website 1')),
-                            m('li', m('a', { href: '/' }, 'Website 2')),
-                            m('li', m('a', { href: '/' }, 'Website 3')),
+                            vnode.state.saint?.websites.map(website => [
+                                m('li', m('a', { href: website.link }, website.title)),
+                                // m('li', m('a', { href: '/' }, 'Website 2')),
+                                //     m('li', m('a', { href: '/' }, 'Website 3')),
+                            ]
+                            )
                         )
-                    )
+                    ) : []
                 )
             )
         ]

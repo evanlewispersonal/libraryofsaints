@@ -4,6 +4,9 @@ import Saints from '../../models/Saints'
 
 import { search_icon, down_arrow } from '../components/icons'
 
+
+const image_base = 'https://libraryofsaints.s3.ap-southeast-2.amazonaws.com/'
+
 const skeleton_list = [{ tskeletonest: true }, { skeleton: true }, { skeleton: true }]
 
 const Page = {
@@ -56,7 +59,7 @@ const Page = {
                                 },
                                 m('.saint_tile_title.saint_tile_name', saint.patron_name),
                                 saint.monikers ? m('.saint_tile_title.saint_tile_moniker', saint.monikers[0]) : [],
-                                m('.saint_tile_image', m('img', { src: 'https://libraryofsaints.s3.ap-southeast-2.amazonaws.com/' + (saint.icons ? saint.icons[0] : '') + '.jpg' }))
+                                m('.saint_tile_image', m('img', { src: image_base + (saint.icons ? saint.icons[0].code : '') + '.jpg' }))
                             )
 
                         ])

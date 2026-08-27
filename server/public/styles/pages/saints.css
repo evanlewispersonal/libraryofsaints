@@ -1,6 +1,5 @@
 .page {
     background-color: #C3D7DF;
-
 }
 
 .library_bar {
@@ -65,10 +64,8 @@
     background: white;
     border-radius: 10px;
 }
-f
 
-
-.filter_bar_section {
+f .filter_bar_section {
     height: 60px;
     border-top: solid 3px var(--primary);
 }

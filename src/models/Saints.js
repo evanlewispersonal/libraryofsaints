@@ -37,7 +37,27 @@ const Saints = {
                     console.error(err)
                 })
         }
-    }
+    },
+
+    load_saints_life: (code, cb = () => { }) => {
+
+        fetch('/saintslife/' + code + '.txt')
+            .then(json_result => {
+                if (json_result.ok) {
+
+                    json_result.json()
+                        .then(writing_style => {
+                            cb(writing_style.text)
+                        })
+                        .catch(err => {
+                            console.error(err)
+                        })
+                }
+                else {
+                    console.error(json_result.status)
+                }
+            })
+    },
 }
 
 module.exports = Saints
