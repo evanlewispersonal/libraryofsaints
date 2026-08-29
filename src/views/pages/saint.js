@@ -24,11 +24,10 @@ const Page = {
 
 
         let secondary_monikers = vnode.state.saint?.monikers ? vnode.state.saint.monikers.slice(1) : []
-
         return [
 
             m('.page',
-                m(background_frieze),
+                vnode.attrs.test ? m(background_frieze) : [],
                 m('.inner_page',
                     m('h1',
                         vnode.state.saint?.patron_name,

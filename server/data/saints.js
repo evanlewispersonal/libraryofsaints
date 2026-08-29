@@ -149,7 +149,7 @@ const Saints =
             monikers: ['of Georgia'],
             icons: [
                 {
-                    code: 'saintalexanderofmunich',
+                    code: 'saintgabrielofgeorgia',
                     source: 'American Carpatho-Russian Orthodox Diocese of North America',
                     sourcelink: 'https://www.acrod.org/orthodox-christianity/articles/saints/st-gregory-urgebadze'
                 }]
