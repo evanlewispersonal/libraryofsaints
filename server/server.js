@@ -82,21 +82,21 @@ const basic_image = 'https://evanclewisimages.s3.ap-southeast-2.amazonaws.com/li
 const basic_image_alt = 'A collage of dramatic images and a logo underneath depicting several books and the title "Library of Short Stories"'
 
 //HTTPS REDIRECT
-app.use(function (request, response, next) {
+// app.use(function (request, response, next) {
+//     console.log('')
+//     if (process.env.NODE_ENV != 'development' && (
+//         (!request.secure)
+//         ||
+//         (request.headers.host.match(/^www/) == null))
+//     ) {
+//         let url = "https://www." + request.headers.host.replace(/^www\./, '') + request.url
 
-    if (process.env.NODE_ENV != 'development' && (
-        (!request.secure)
-        ||
-        (request.headers.host.match(/^www/) == null))
-    ) {
-        let url = "https://www." + request.headers.host.replace(/^www\./, '') + request.url
-
-        return response.redirect(301, url);
-    }
-    else {
-        next();
-    }
-})
+//         return response.redirect(301, url);
+//     }
+//     else {
+//         next();
+//     }
+// })
 
 let home_render = {
     bundle: 'bundle',
