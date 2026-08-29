@@ -32,7 +32,7 @@ const Saints = require('./data/saints')
 const PORT = process.env.PORT || 3004;
 
 var corsOptions = {
-    origin: ['https://libraryofsaints.com', 'https://www.library-of-saints-1c2e99c9c954.herokuapp.com/'],
+    origin: ['https://libraryofsaints.com', 'https://www.library-of-saints-1c2e99c9c954.herokuapp.com', 'http://www.library-of-saints-1c2e99c9c954.herokuapp.com'],
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
