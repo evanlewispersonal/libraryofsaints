@@ -204,7 +204,7 @@ app.get('/dist/bundle.js', (req, res) => {
 
 
 app.get('/styles/style.css', (req, res) => {
-    let encode = process.env.NODE_ENV == 'production'
+    let encode = process.env.NODE_ENV == false//'production'
 
     if (encode) res.set('Content-Encoding', 'gzip');
     res.set('Content-Type', 'text/css');
@@ -213,7 +213,7 @@ app.get('/styles/style.css', (req, res) => {
 })
 
 app.get('/styles/pages/:style', (req, res) => {
-    let encode = process.env.NODE_ENV == 'production'
+    let encode = process.env.NODE_ENV == false//'production'
     if (encode) res.set('Content-Encoding', 'gzip');
     res.set('Content-Type', 'text/css');
 
