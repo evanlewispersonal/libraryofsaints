@@ -78,7 +78,7 @@ const base_canonical_url = 'https://www.libraryofsaints.com'
 
 const basic_title = pages.basic_title
 const basic_description = pages.basic_description
-const basic_image = 'https://evanclewisimages.s3.ap-southeast-2.amazonaws.com/library_og.jpg'
+const basic_image = 'https://libraryofsaints.s3.ap-southeast-2.amazonaws.com/library_of_saints_og.png'
 const basic_image_alt = 'A collage of dramatic images and a logo underneath depicting several books and the title "Library of Short Stories"'
 
 //HTTPS REDIRECT
