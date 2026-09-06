@@ -23,6 +23,10 @@ const Page = {
     view: function (vnode) {
 
 
+        let common_name = [vnode.state.saint?.patron_name,
+        vnode.state.saint?.monikers ? [' ',
+            vnode.state.saint?.monikers[0]] : []]
+
         let secondary_monikers = vnode.state.saint?.monikers ? vnode.state.saint.monikers.slice(1) : []
         return [
 
@@ -30,9 +34,7 @@ const Page = {
                 vnode.attrs.test ? m(background_frieze) : [],
                 m('.inner_page',
                     m('h1',
-                        vnode.state.saint?.patron_name,
-                        vnode.state.saint?.monikers ? [' ',
-                            vnode.state.saint?.monikers[0]] : []
+                        common_name
 
                     ),//vnode.attrs.saint),
                     m('.monikers', (secondary_monikers)
@@ -62,6 +64,8 @@ const Page = {
                             },
                             m('h3', 'Life of ', vnode.state.saint?.patron_name),
                             vnode.attrs.life ? m.trust(vnode.attrs.life) : [
+                                m('p', 'If you know of a public domain summary of the life of ', common_name, ' or are willing to write a short summary yourself, use the ', m('a', { href: '/contribute' }, 'contribute'), ' page'),
+
                                 m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                                 m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
                                 m('p', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
@@ -99,17 +103,18 @@ const Page = {
 
                     ),
 
-                    vnode.state.saint?.websites ? m('.external_links',
+                    m('.external_links',
                         m('h3', 'External Links'),
-                        m('ul',
+                        vnode.state.saint?.websites ? m('ul',
                             vnode.state.saint?.websites.map(website => [
                                 m('li', m('a', { href: website.link }, website.title)),
                                 // m('li', m('a', { href: '/' }, 'Website 2')),
                                 //     m('li', m('a', { href: '/' }, 'Website 3')),
                             ]
                             )
-                        )
-                    ) : []
+                        ) : m('p', 'If you know of any churches, monasteries, communities or websites associated with ', common_name, ', please use the ', m('a', { href: '/contribute' }, 'contribute'), ' page'),
+
+                    )
                 )
             )
         ]
