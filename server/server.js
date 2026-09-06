@@ -79,7 +79,7 @@ const base_canonical_url = 'https://www.libraryofsaints.com'
 const basic_title = pages.basic_title
 const basic_description = pages.basic_description
 const basic_image = 'https://libraryofsaints.s3.ap-southeast-2.amazonaws.com/library_of_saints_og.png'
-const basic_image_alt = 'A collage of dramatic images and a logo underneath depicting several books and the title "Library of Short Stories"'
+const basic_image_alt = 'A collage of dramatic images and a logo underneath depicting several people and the title "Library of Saints"'
 
 //HTTPS REDIRECT
 // app.use(function (request, response, next) {

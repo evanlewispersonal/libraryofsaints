@@ -9,7 +9,7 @@ const image_url = s3_base + 'small/'
 const pages = {
     description_character_minimum: 70,
     description_character_limit: 155,
-    basic_title: "Library of Saints",// | Read Classic Short Stories Online",
+    basic_title: "Library of Saints",
     basic_description: "The Library of Saints | Read the lives of the Christian Saints.",
     basic_type: 'website',
     basic_keywords: 'Saints',
@@ -31,6 +31,16 @@ const pages = {
             get_index_title: (_, query) => {
 
                 return "Christ | Library of Saints"
+
+            }
+        },
+        {
+            route: '/contribute',
+            topbarlink: true,
+            title: "Contribute",
+            get_index_title: (_, query) => {
+
+                return "Contribute | Library of Saints"
 
             }
         },

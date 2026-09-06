@@ -36,6 +36,7 @@ const Menu = {
         { route: '/gallery', subroute: '/:saint' },
 
         { route: '/christ', title: "Christ", topbarlink: true },
+        { route: '/contribute', title: "Contribute" },
 
     ],
 

@@ -125,3 +125,25 @@ body {
     width: 35px;
     height: 35px;
 }
+
+.in_progress{
+    position: fixed;
+    bottom: 6px;
+    right: 45px;
+    opacity: 0.3;
+    background: white;
+    border: solid 3px var(--primary);
+    padding: 3px;
+    border-radius: 5px;
+
+}
+
+footer{
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-top: solid 3px var(--primary);
+}
+
+.links a{
+    color: var(--link_text);
+}

@@ -21,6 +21,7 @@ import saints from "./views/pages/saints.js"
 import saint from "./views/pages/saint.js"
 import christ from "./views/pages/christ.js"
 import gallery from "./views/pages/gallery.js"
+import contribute from "./views/pages/contribute.js"
 
 
 let pages = {
@@ -29,6 +30,7 @@ let pages = {
     '/saint': saint,
     '/gallery': gallery,
     '/christ': christ,
+    '/contribute': contribute,
 }
 
 

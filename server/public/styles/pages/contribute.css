@@ -1,0 +1,25 @@
+
+
+h1 {
+    text-align: center;
+    font-weight: initial;
+    font-family: garamond;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.default_box{
+    border: solid 3px black;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    box-sizing: border-box;
+    white-space: break-spaces;
+}
+
+.page{
+    min-height: calc(100vh - 103px);
+}

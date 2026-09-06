@@ -16,10 +16,19 @@ const Page = {
 
                 vnode.children,
 
-                m(noai_icon)
+                m(noai_icon),
+                m('.in_progress', 'Work In Progress'),
+
+
+                m('footer',
+                    m('.links',
+                        m('', 
+                            m('a', { href: '/contribute'}, 'Contribute')
+                        )
+                    )
+                )
             )
         ]
-
     }
 }
 
