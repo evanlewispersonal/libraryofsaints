@@ -38,8 +38,8 @@ const Page = {
                                 m('.icon_tile',
                                     m('img.icon', { src: image_base + icon.code + '.jpg' }),
 
-                                    m('i.icon_title', 'Jonah survives'),
-                                    m('a.icon_source', {href: icon.sourcelink}, icon.source),
+                                    m('i.icon_title', icon.name || 'Title'),
+                                    m('a.icon_source', {href: icon.sourcelink}, icon.source || 'Unkown Source'),
                                     m('a.icon_download', {
                                         href: image_base + icon.code + '_800.jpg'
                                     },
