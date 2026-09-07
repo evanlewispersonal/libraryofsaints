@@ -33,6 +33,7 @@ const PORT = process.env.PORT || 3004;
 
 var corsOptions = {
     origin: ['https://libraryofsaints.com',
+        'https://www.libraryofsaints.com',
         'https://www.library-of-saints-1c2e99c9c954.herokuapp.com',
         'http://www.library-of-saints-1c2e99c9c954.herokuapp.com',
     'herokuapp.com'],
@@ -82,21 +83,20 @@ const basic_image = 'https://libraryofsaints.s3.ap-southeast-2.amazonaws.com/lib
 const basic_image_alt = 'A collage of dramatic images and a logo underneath depicting several people and the title "Library of Saints"'
 
 //HTTPS REDIRECT
-// app.use(function (request, response, next) {
-//     console.log('')
-//     if (process.env.NODE_ENV != 'development' && (
-//         (!request.secure)
-//         ||
-//         (request.headers.host.match(/^www/) == null))
-//     ) {
-//         let url = "https://www." + request.headers.host.replace(/^www\./, '') + request.url
+app.use(function (request, response, next) {
+    if (process.env.NODE_ENV != 'development' && (
+        (!request.secure)
+        ||
+        (request.headers.host.match(/^www/) == null))
+    ) {
+        let url = "https://www." + request.headers.host.replace(/^www\./, '') + request.url
 
-//         return response.redirect(301, url);
-//     }
-//     else {
-//         next();
-//     }
-// })
+        return response.redirect(301, url);
+    }
+    else {
+        next();
+    }
+})
 
 let home_render = {
     bundle: 'bundle',

@@ -40,7 +40,7 @@ const Page = {
                     m('.monikers', (secondary_monikers)
                         .map(moniker => m('.moniker', moniker))
                     ),
-                    m('.tags', (vnode.state.saint?.tags || ['Monk', 'Abbot', 'Priest']).map(tag => m('.tag', tag))),
+                    vnode.state.saint?.tags ? m('.tags', (vnode.state.saint?.tags.map(tag => m('.tag', tag)))) : [],
 
                     m('.icon_window',
                         m('.icons',

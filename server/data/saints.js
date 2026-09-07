@@ -22,17 +22,18 @@ const Saints =
             patron_name: 'St. Moses',
             monikers: ['the Black', 'the Ethiopian', 'the Strong', 'the Robber'],
             icons: [
-                {
-                    code: 'saintmoses',
-                    title: '',
-                    source: 'Orthodox Road',
-                    sourcelink: 'https://www.orthodoxroad.com/saint-moses-the-black/'
-                },
+
                 {
                     code: 'saintmoses_2',
                     name: '',
                     source: 'St. Andrew Greek Orthodox Church',
                     sourcelink: 'https://saintandrewgoc.org/blog/2015/8/28/love-for-all-creation'
+                },
+                {
+                    code: 'saintmoses',
+                    title: '',
+                    source: 'Orthodox Road',
+                    sourcelink: 'https://www.orthodoxroad.com/saint-moses-the-black/'
                 },
                 {
                     code: 'saintmoses_3',
@@ -61,15 +62,23 @@ const Saints =
             ],
             icons: [
                 { code: 'saintpaisiosofmountathos' },
+            ],
+            tags: [
+                'Monk',
+                'Carpenter',
+                'Radio Technician'
             ]
         },
         {
             patron_name: 'Prophet Jonah',
-            icons: [{ code: 'jonah' }]
+            icons: [{ code: 'jonah' }],
+            // tags: [
+            //     ''
+            // ]
         },
         {
             patron_name: 'Prophet Noah',
-            icons: [{ code: 'noah' }]
+            icons: [{ code: 'noah' }],
         },
         {
             patron_name: 'St. John',
@@ -89,50 +98,70 @@ const Saints =
         {
             patron_name: 'St. Nephon',
             monikers: ['Bishop of Consantinople'],
-            icons: [{ code: 'nephon' }]
+            icons: [{ code: 'nephon' }],
+            tags: ['Monk']
         },
         {
             patron_name: 'St. Christopher',
             monikers: ['the Christ-bearer', 'of Lycia', 'the Great Martyr'],
-            icons: [{ code: 'saintchristopher' }]
+            icons: [{ code: 'saintchristopher' }],
+            tags: ['Martyr']
         },
         {
-            patron_name: 'St. Paul', monikers: ['the Apostle'], icons: [{ code: 'saintpaul' }]
+            patron_name: 'St. Paul',
+            monikers: ['the Apostle'],
+            icons: [{ code: 'saintpaul' }],
+            tags: ['Martyr']
+
         },
         {
             patron_name: 'St. Peter',
             monikers: ['the Apostle', 'Bishop of Rome', 'Bishop of Antioch'],
-            icons: [{ code: 'saintpeter' }]
+            icons: [{ code: 'saintpeter' }],
+            tags: ['Martyr']
+
         },
         {
             patron_name: 'St. Simeone',
             monikers: ['the Stylite'],
-            icons: [{ code: 'saintsimeon' }]
+            icons: [{ code: 'saintsimeon' }],
+            tags: ['Monk']
+
         },
         {
             patron_name: 'St. Marina',
             monikers: ['the Great Martyr'],
-            icons: [{ code: 'saintmarina' }]
+            icons: [{ code: 'saintmarina' }],
+            tags: ['Martyr']
+
         },
         {
             patron_name: 'St. Elizabeth',
             monikers: ['the Grand Duchess'],
-            icons: [{ code: 'saintelizabeth' }]
+            icons: [{ code: 'saintelizabeth' }],
+            tags: ['Martyr']
+
         },
         {
             patron_name: 'St. Adrian',
             monikers: ['of Nicomedia'],
-            icons: [{ code: 'adrianandnatalia' }]
+            icons: [{ code: 'adrianandnatalia' }],
+            tags: ['Martyr']
+
         },
         {
             patron_name: 'St. Natalia',
             monikers: ['of Nicomedia'],
-            icons: [{ code: 'adrianandnatalia' }]
+            icons: [{ code: 'adrianandnatalia' }],
+            tags: ['Martyr']
+
         },
         {
             patron_name: 'St. Phanourius',
             monikers: ['the Newly-Revealed'],
-            icons: [{ code: 'saintphanourius' }]
+            icons: [{ code: 'saintphanourius' }],
+            tags: ['Martyr']
+
         },
         {
             patron_name: 'St. Alexander',
@@ -142,7 +171,9 @@ const Saints =
                     code: 'saintalexanderofmunich',
                     source: 'https://ocf.net/theres-a-saint-for-that-st-alexander-of-munich/',
                     sourcelink: 'https://ocf.net/theres-a-saint-for-that-st-alexander-of-munich/'
-                }]
+                }],
+                tags: ['Martyr']
+
         },
         {
             patron_name: 'St. Gabriel',
@@ -152,7 +183,9 @@ const Saints =
                     code: 'saintgabrielofgeorgia',
                     source: 'American Carpatho-Russian Orthodox Diocese of North America',
                     sourcelink: 'https://www.acrod.org/orthodox-christianity/articles/saints/st-gregory-urgebadze'
-                }]
+                }],
+                tags: ['Confessor of Faith']
+
         },
         {
             patron_name: 'St. George',
@@ -162,8 +195,15 @@ const Saints =
                     code: 'saintgeorge',
                     source: 'Orthodox Church in America',
                     sourcelink: 'https://www.oca.org/saints/lives/2026/04/23/101184-greatmartyr-victory-bearer-and-wonderworker-george'
-                }]
+                }],
+            tags: ['Martyr', 'Warrior']
+
         },
+
+
+
+        // Saint Elois
+        // Cyprian and Justina https://www.youtube.com/watch?v=nor581GvVg4
     ]
 
 }
