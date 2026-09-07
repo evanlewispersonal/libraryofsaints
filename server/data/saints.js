@@ -160,7 +160,13 @@ const Saints =
             patron_name: 'St. Phanourius',
             monikers: ['the Newly-Revealed'],
             icons: [{ code: 'saintphanourius' }],
-            tags: ['Martyr']
+            tags: ['Martyr'],
+            websites: [
+                {
+                    title: 'Life of Saint Phanourious - Orthodox Church of Americal',
+                    link: 'https://www.oca.org/saints/lives/2022/08/27/108969-saint-phanourius'
+                }
+            ]
 
         },
         {
@@ -172,7 +178,7 @@ const Saints =
                     source: 'https://ocf.net/theres-a-saint-for-that-st-alexander-of-munich/',
                     sourcelink: 'https://ocf.net/theres-a-saint-for-that-st-alexander-of-munich/'
                 }],
-                tags: ['Martyr']
+            tags: ['Martyr']
 
         },
         {
@@ -184,7 +190,10 @@ const Saints =
                     source: 'American Carpatho-Russian Orthodox Diocese of North America',
                     sourcelink: 'https://www.acrod.org/orthodox-christianity/articles/saints/st-gregory-urgebadze'
                 }],
-                tags: ['Confessor of Faith']
+            tags: [
+                'Confessor of Faith',
+                'Fool for Christ'
+            ]
 
         },
         {

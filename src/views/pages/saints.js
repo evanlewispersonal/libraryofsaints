@@ -42,9 +42,9 @@ const Page = {
             m('.page',
 
                 m('.display_section'),
-                m('.sort_section',
-                    m(sort_button)
-                ),
+                // m('.sort_section',
+                //     m(sort_button)
+                // ),
 
 
                 m('.saint_tiles',
