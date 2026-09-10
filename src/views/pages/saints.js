@@ -1,4 +1,5 @@
 import m, { route, redraw } from 'mithril'
+import { alphabetise } from '../../logic/Sorter'
 
 import Saints from '../../models/Saints'
 
@@ -50,7 +51,10 @@ const Page = {
                 m('.saint_tiles',
 
                     (Saints.list || skeleton_list)
+
                         .filter(saint => saint.patron_name.toLowerCase().includes(vnode.state.input.toLowerCase()))
+
+                        .sort((a,b) => alphabetise(a.patron_name, b.patron_name))
 
                         .map(saint => [
                             m('a.saint_tile',
